@@ -1,0 +1,49 @@
+# Workflow para compilar y desplegar la aplicación Vite en GitHub Pages automáticamente
+name: Desplegar a GitHub Pages
+
+on:
+  push:
+    branches: ["main", "master"] # Se ejecuta al subir cambios a la rama principal (main o master)
+  workflow_dispatch: # Permite ejecutar el flujo manualmente desde la pestaña Actions en GitHub
+
+# Permisos requeridos para desplegar en GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Permite una sola implementación simultánea
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Compilar aplicación (Vite Build)
+        run: npm run build
+
+      - name: Subir artefacto para Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: Desplegar a GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

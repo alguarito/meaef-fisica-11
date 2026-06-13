@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d2b1e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="MEAEF Física" />
+  <meta name="description" content="Plataforma educativa de Física 11° basada en el Modelo Energético-Ambiental para la Enseñanza de la Física (MEAEF). Aprende hidrodinámica, termodinámica, electromagnetismo y física moderna con simuladores PhET y fichas HIEM interactivas." />
+  <meta name="keywords" content="física, Colombia, educación, MEAEF, PhET, HIEM, CER, energía, multigrado" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="MEAEF — Física 11°" />
+  <meta property="og:description" content="Plataforma educativa de Física 11° — Aprende con simuladores PhET y fichas HIEM interactivas" />
+  <meta property="og:type" content="website" />
+  
+  <title>MEAEF — Física 11° | Guardianes del Sistema</title>
+  
+  <!-- Apple Touch Icons -->
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Offline Banner -->
+  <div id="offline-banner" class="offline-banner" role="alert" aria-live="polite">
+    📵 Sin conexión — El contenido guardado sigue disponible
+  </div>
+  
+  <!-- Toast Notifications -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+  
+  <!-- Main App Container -->
+  <div id="app" class="page-enter"></div>
+  
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav" role="navigation" aria-label="Navegación principal">
+    <button class="nav-item active" data-route="home" aria-label="Inicio">
+      <span class="nav-icon">🏠</span>
+      <span class="nav-label">Inicio</span>
+    </button>
+    <button class="nav-item" data-route="periodo" aria-label="Periodos">
+      <span class="nav-icon">📚</span>
+      <span class="nav-label">Periodos</span>
+    </button>
+    <button class="nav-item" data-route="progreso" aria-label="Mi progreso">
+      <span class="nav-icon">🌱</span>
+      <span class="nav-label">Progreso</span>
+    </button>
+  </nav>
+  
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

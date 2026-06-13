@@ -1,0 +1,21 @@
+{
+  "name": "meaef-fisica-11",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Plataforma educativa MEAEF - Física 11° - Guardianes del Sistema",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5",
+    "vite-plugin-pwa": "^1.0.0"
+  },
+  "dependencies": {
+    "dexie": "^4.0.11",
+    "workbox-window": "^7.3.0"
+  }
+}
