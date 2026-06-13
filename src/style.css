@@ -4,7 +4,7 @@
    Inspired by: Linear, Notion, Duolingo, Khan Academy
    ============================================================ */
 
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap");
+/* Fonts are loaded once via <link rel="preconnect/stylesheet"> in index.html */
 
 :root {
   --clr-bg:          #f7f8fc;
@@ -464,6 +464,9 @@ em { color: var(--clr-accent); font-style: normal; font-weight: 600; }
 .content-body h3 { font-size: var(--text-lg); }
 .content-body p  { margin-bottom: var(--sp-2); }
 .content-body strong { color: var(--clr-text); }
+/* Emphasis in reading content renders as real italics (not the global green accent),
+   so quotations don't visually compete with key terms. */
+.content-body em { font-style: italic; font-weight: 500; color: var(--clr-text); }
 
 .equation-block {
   background: linear-gradient(135deg, #f0f4ff 0%, #e8edfb 100%);
