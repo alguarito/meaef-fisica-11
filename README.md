@@ -6,13 +6,17 @@ Plataforma educativa de **Física 11°** basada en el **Modelo Energético-Ambie
 
 ## 🚀 Cómo publicar en GitHub
 
-> Esta carpeta **ya es un repositorio Git** con todo el código listo. **No incluye `node_modules/` ni `dist/`** a propósito: pesan ~90 MB y miles de archivos, y se regeneran solos. **Nunca subas esas dos carpetas** — son la causa habitual de que falle una subida manual.
+> Este proyecto **no incluye `node_modules/` ni `dist/`** a propósito: pesan ~90 MB y miles de archivos, y se regeneran solos. **Nunca subas esas dos carpetas** — son la causa habitual de que falle una subida manual.
 
-**Opción A — con Git (recomendada, 2 comandos):**
+**Opción A — con Git (recomendada):**
 
-1. Crea un repositorio **vacío** en GitHub (sin README ni .gitignore).
+1. Crea un repositorio **vacío** en GitHub (sin README ni .gitignore) y copia su URL.
 2. En una terminal, dentro de esta carpeta, ejecuta:
    ```bash
+   git init
+   git add .
+   git commit -m "Versión inicial"
+   git branch -M main
    git remote add origin https://github.com/USUARIO/REPOSITORIO.git
    git push -u origin main
    ```
@@ -21,7 +25,7 @@ Plataforma educativa de **Física 11°** basada en el **Modelo Energético-Ambie
 **Opción B — sin Git (por la web):**
 
 1. Crea un repositorio nuevo en GitHub.
-2. **Add file → Upload files** y arrastra el contenido de esta carpeta (los ~20 archivos visibles; la carpeta oculta `.git` no es necesaria por esta vía).
+2. **Add file → Upload files** y arrastra el contenido de esta carpeta (~20 archivos).
 3. Pulsa *Commit changes* y luego **Settings → Pages → Source → GitHub Actions**.
 
 En ambos casos, GitHub Actions instala las dependencias y compila el sitio en la nube automáticamente: **no hay que subir dependencias ni archivos compilados**.
