@@ -13,9 +13,9 @@ function md(text) {
     return `%%EQ${idx}%%`;
   });
 
-  // 2. Inline math $...$
+  // 2. Inline math $...$  (styled via .math-inline so it adapts to dark mode)
   text = text.replace(/\$([^$\n]+?)\$/g, (_, eq) =>
-    `<span class="math-inline"><em style="font-family:'Georgia',serif;font-style:italic;color:#4338ca;background:#eef2ff;padding:0.1em 0.35em;border-radius:4px;font-size:0.95em">${eq}</em></span>`
+    `<span class="math-inline">${eq}</span>`
   );
 
   // 3. Bold/italic/code
@@ -53,7 +53,7 @@ function md(text) {
   text = text.replace(/%%EQ(\d+)%%/g, (_, idx) => {
     const eq = equationBlocks[parseInt(idx)];
     return `<div class="equation-block">
-      <div style="font-family:'Georgia',serif;font-size:1.25rem;color:#1e1b4b;text-align:center;letter-spacing:0.03em;line-height:1.8">
+      <div style="font-family:'Georgia',serif;font-size:1.25rem;color:var(--clr-equation-text);text-align:center;letter-spacing:0.03em;line-height:1.8">
         ${eq.replace(/\\\\?([a-zA-Z]+)/g, (_,cmd) => {
           const map = { rho:'ρ', cdot:'·', frac:' ÷ ', sqrt:'√', Delta:'Δ', delta:'δ',
             alpha:'α', beta:'β', gamma:'γ', theta:'θ', pi:'π', sigma:'σ', omega:'ω',

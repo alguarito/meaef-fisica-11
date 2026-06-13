@@ -18,6 +18,10 @@
   --clr-accent-dark:  #059669;
   --clr-accent-dim:   rgba(16, 185, 129, 0.10);
   --clr-accent-glow:  rgba(16, 185, 129, 0.25);
+  --clr-equation-bg:   linear-gradient(135deg, #f0f4ff 0%, #e8edfb 100%);
+  --clr-equation-text: #1e1b4b;
+  --clr-math:          #4338ca;
+  --clr-math-bg:       #eef2ff;
   --clr-p1:  #0ea5e9;
   --clr-p2:  #f97316;
   --clr-p3:  #8b5cf6;
@@ -469,14 +473,14 @@ em { color: var(--clr-accent); font-style: normal; font-weight: 600; }
 .content-body em { font-style: italic; font-weight: 500; color: var(--clr-text); }
 
 .equation-block {
-  background: linear-gradient(135deg, #f0f4ff 0%, #e8edfb 100%);
+  background: var(--clr-equation-bg);
   border-left: 4px solid var(--clr-accent);
   border-radius: 0 var(--r-md) var(--r-md) 0;
   padding: var(--sp-3) var(--sp-4);
   margin: var(--sp-3) 0;
   font-family: var(--ff-mono);
   font-size: var(--text-base);
-  color: #2d3a8c;
+  color: var(--clr-equation-text);
   overflow-x: auto;
 }
 
@@ -815,7 +819,16 @@ em { color: var(--clr-accent); font-style: normal; font-weight: 600; }
 }
 
 /* ---- Inline Math ---- */
-.math-inline { white-space: nowrap; }
+.math-inline {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  color: var(--clr-math);
+  background: var(--clr-math-bg);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.95em;
+  white-space: nowrap;
+}
 
 /* ================================================================
    TABLET (>= 640px)
@@ -997,4 +1010,56 @@ em { color: var(--clr-accent); font-style: normal; font-weight: 600; }
 @media (min-width: 1440px) {
   .desktop-dashboard { grid-template-columns: 360px 1fr; gap: var(--sp-6); }
   .periodos-grid { gap: var(--sp-5); }
+}
+
+/* ================================================================
+   DARK MODE (follows the device preference)
+   ================================================================ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clr-bg:           #0e1116;
+    --clr-bg2:          #11161d;
+    --clr-surface:      #161b22;
+    --clr-surface2:     #1c232c;
+    --clr-surface3:     #27313d;
+    --clr-border:        rgba(255, 255, 255, 0.09);
+    --clr-border-strong: rgba(255, 255, 255, 0.18);
+    --clr-accent:        #34d399;
+    --clr-accent-dark:   #10b981;
+    --clr-accent-dim:    rgba(52, 211, 153, 0.15);
+    --clr-accent-glow:   rgba(52, 211, 153, 0.30);
+    --clr-text:          #e8ecf5;
+    --clr-text-muted:    #aab2c5;
+    --clr-text-dim:      #7e879c;
+    --sidebar-bg:        #11161d;
+
+    --clr-equation-bg:   linear-gradient(135deg, #182033 0%, #1d263b 100%);
+    --clr-equation-text: #dbe2ff;
+    --clr-math:          #c7d2fe;
+    --clr-math-bg:       rgba(99, 102, 241, 0.20);
+
+    /* Softer, deeper shadows read better on dark surfaces */
+    --shadow-xs: 0 1px 3px rgba(0,0,0,0.30);
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.34), 0 1px 2px rgba(0,0,0,0.30);
+    --shadow-md: 0 6px 20px rgba(0,0,0,0.40), 0 2px 6px rgba(0,0,0,0.30);
+    --shadow-lg: 0 16px 40px rgba(0,0,0,0.46), 0 4px 12px rgba(0,0,0,0.34);
+    --shadow-xl: 0 28px 64px rgba(0,0,0,0.52), 0 8px 20px rgba(0,0,0,0.38);
+    --shadow-accent: 0 8px 28px rgba(52, 211, 153, 0.24);
+  }
+
+  /* Frosted bars need a dark base (they hardcode white in light mode) */
+  .bottom-nav { background: rgba(17, 22, 29, 0.92); }
+
+  /* Unlocked badge gradient is light-only; tint it for dark */
+  .badge-item.unlocked {
+    background: linear-gradient(135deg, rgba(16,185,129,0.14), rgba(52,211,153,0.10));
+  }
+
+  /* Reading tip uses warm light tones; keep them legible on dark */
+  .reading-tip {
+    background: rgba(245, 158, 11, 0.10);
+    border-color: rgba(245, 158, 11, 0.30);
+    border-left-color: #f59e0b;
+    color: #fcd9a3;
+  }
 }
