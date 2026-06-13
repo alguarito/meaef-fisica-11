@@ -24,7 +24,7 @@
   --clr-p4:  #f59e0b;
   --clr-text:       #0f1432;
   --clr-text-muted: #4a5271;
-  --clr-text-dim:   #9199b8;
+  --clr-text-dim:   #6b7392;
   --sidebar-w: 260px;
   --sidebar-bg: #ffffff;
   --ff-display: "Plus Jakarta Sans", system-ui, sans-serif;
@@ -137,7 +137,7 @@ em { color: var(--clr-accent); font-style: normal; font-weight: 600; }
 .mt-2 { margin-top: var(--sp-2); }
 
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-2); }
-.grid-3 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-2); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-1); }
 
 /* ---- Bottom Navigation (mobile) ---- */
 .bottom-nav {
@@ -548,7 +548,7 @@ em { color: var(--clr-accent); font-style: normal; font-weight: 600; }
 /* ---- Badge Grid ---- */
 .badge-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--sp-2);
 }
 
@@ -572,7 +572,7 @@ em { color: var(--clr-accent); font-style: normal; font-weight: 600; }
 
 .badge-item.locked { opacity: 0.42; filter: grayscale(0.5); }
 .badge-icon { font-size: 2rem; }
-.badge-name { font-size: var(--text-xs); font-weight: 700; color: var(--clr-text-muted); }
+.badge-name { font-size: var(--text-xs); font-weight: 700; color: var(--clr-text-muted); line-height: 1.25; overflow-wrap: anywhere; }
 
 /* ---- PhET Frame ---- */
 .phet-frame {
@@ -652,12 +652,174 @@ em { color: var(--clr-accent); font-style: normal; font-weight: 600; }
   color: #78350f;
 }
 
+/* ---- Chips ---- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--clr-surface2);
+  border: 1px solid var(--clr-border);
+  color: var(--clr-text-muted);
+  font-family: var(--ff-display);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--r-full);
+  white-space: nowrap;
+}
+
+/* ---- Orienting Questions ---- */
+.pregunta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-1);
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-left: 3px solid var(--clr-accent);
+  border-radius: var(--r-md);
+  padding: var(--sp-2) var(--sp-3);
+  margin-bottom: var(--sp-1);
+  transition: border-color var(--tr-base), box-shadow var(--tr-base);
+}
+
+.pregunta-item:hover {
+  box-shadow: var(--shadow-sm);
+  border-left-color: var(--clr-accent-dark);
+}
+
+.pregunta-num {
+  font-family: var(--ff-display);
+  font-weight: 800;
+  color: var(--clr-accent);
+  flex-shrink: 0;
+}
+
+.pregunta-text {
+  color: var(--clr-text);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+/* ---- PhET Container ---- */
+.phet-container {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-xl);
+  padding: var(--sp-2);
+  box-shadow: var(--shadow-sm);
+}
+
+.phet-header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-1) var(--sp-1) var(--sp-2);
+}
+
+/* ---- HIEM Moments ---- */
+.hiem-momento {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-3);
+  box-shadow: var(--shadow-xs);
+}
+
+.hiem-momento-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-2);
+}
+
+.hiem-momento-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.hiem-momento-title {
+  font-family: var(--ff-display);
+  font-size: var(--text-base);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.hiem-momento-desc {
+  font-size: var(--text-sm);
+  color: var(--clr-text-muted);
+  line-height: 1.5;
+  margin-top: 2px;
+}
+
+/* ---- HIEM Textareas ---- */
+.hiem-textarea {
+  width: 100%;
+  font-family: var(--ff-body);
+  font-size: var(--text-sm);
+  color: var(--clr-text);
+  line-height: 1.6;
+  background: var(--clr-surface2);
+  border: 1.5px solid var(--clr-border);
+  border-radius: var(--r-md);
+  padding: var(--sp-2);
+  resize: vertical;
+  transition: border-color var(--tr-base), box-shadow var(--tr-base), background var(--tr-base);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hiem-textarea::placeholder { color: var(--clr-text-dim); }
+
+.hiem-textarea:focus {
+  outline: none;
+  border-color: var(--clr-accent);
+  box-shadow: 0 0 0 3px var(--clr-accent-dim);
+  background: var(--clr-surface);
+}
+
+/* ---- CER Grid ---- */
+.cer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-2);
+}
+
+.cer-item {
+  background: var(--clr-surface2);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-md);
+  padding: var(--sp-2) var(--sp-3);
+}
+
+.cer-label {
+  font-family: var(--ff-display);
+  font-size: var(--text-sm);
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+/* ---- Skeleton Loader ---- */
+.skeleton {
+  background: linear-gradient(90deg, var(--clr-surface2) 25%, var(--clr-surface3) 50%, var(--clr-surface2) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.4s ease-in-out infinite;
+  border-radius: var(--r-lg);
+}
+
+@keyframes skeleton-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ---- Inline Math ---- */
+.math-inline { white-space: nowrap; }
+
 /* ================================================================
    TABLET (>= 640px)
    ================================================================ */
 @media (min-width: 640px) {
   .grid-3       { grid-template-columns: repeat(3, 1fr); }
-  .badge-grid   { grid-template-columns: repeat(4, 1fr); }
+  .badge-grid   { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .phet-frame   { height: 520px; }
   .periodos-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -699,7 +861,7 @@ em { color: var(--clr-accent); font-style: normal; font-weight: 600; }
   }
 
   .bottom-nav::before {
-    content: "MEAEF Fisica";
+    content: "MEAEF Física";
     display: block;
     font-family: var(--ff-display);
     font-size: 1rem;
@@ -796,8 +958,8 @@ em { color: var(--clr-accent); font-style: normal; font-weight: 600; }
   .progress-stat-num { font-size: var(--text-3xl); }
 
   .card { padding: var(--sp-4); }
-  .grid-3  { grid-template-columns: repeat(3, 1fr); }
-  .badge-grid { grid-template-columns: repeat(4, 1fr); }
+  .grid-3  { grid-template-columns: repeat(3, 1fr); gap: var(--sp-2); }
+  .badge-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
   /* Content reading */
   .content-body {
@@ -817,6 +979,13 @@ em { color: var(--clr-accent); font-style: normal; font-weight: 600; }
   /* Session tabs */
   .session-tab-icon  { font-size: 2.2rem; }
   .session-tab-label { font-size: var(--text-base); }
+
+  /* CER section: three columns on wide screens */
+  .cer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  /* Comfortable reading / form widths (avoid ultra-long line lengths) */
+  .container-reading { max-width: 860px; margin-inline: auto; }
+  .container-form    { max-width: 980px; margin-inline: auto; }
 }
 
 /* ================================================================

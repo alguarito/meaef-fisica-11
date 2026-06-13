@@ -21,7 +21,7 @@ export async function renderHIEM(container, params) {
   const phet = periodo.phet[semana.sesionB.phetIndex];
 
   container.innerHTML = `
-    <div class="container page-enter">
+    <div class="container container-form page-enter">
       <!-- Header -->
       <div style="padding:var(--sp-2) 0 var(--sp-1)">
         <button class="btn btn-ghost mb-2" style="width:auto;padding:0.5rem 1rem" id="back-btn">

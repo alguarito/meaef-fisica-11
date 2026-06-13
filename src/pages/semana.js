@@ -96,7 +96,7 @@ export async function renderSemana(container, params) {
     const teoriaHTML = md(semana.sesionA.teoria);
 
     container.innerHTML = `
-      <div class="container page-enter">
+      <div class="container container-reading page-enter">
         <!-- Back button & header -->
         <div style="padding:var(--sp-2) 0">
           <button class="btn btn-ghost mb-2" style="width:auto;padding:0.5rem 1rem" id="back-btn">
