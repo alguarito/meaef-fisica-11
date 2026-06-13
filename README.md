@@ -2,6 +2,30 @@
 
 Plataforma educativa de **Física 11°** basada en el **Modelo Energético-Ambiental para la Enseñanza de la Física (MEAEF)**. Aplicación web progresiva (PWA) con simuladores PhET y fichas HIEM interactivas, diseñada para uso multigrado y funcionamiento sin conexión.
 
+---
+
+## 🚀 Cómo publicar en GitHub
+
+> Esta carpeta **ya es un repositorio Git** con todo el código listo. **No incluye `node_modules/` ni `dist/`** a propósito: pesan ~90 MB y miles de archivos, y se regeneran solos. **Nunca subas esas dos carpetas** — son la causa habitual de que falle una subida manual.
+
+**Opción A — con Git (recomendada, 2 comandos):**
+
+1. Crea un repositorio **vacío** en GitHub (sin README ni .gitignore).
+2. En una terminal, dentro de esta carpeta, ejecuta:
+   ```bash
+   git remote add origin https://github.com/USUARIO/REPOSITORIO.git
+   git push -u origin main
+   ```
+3. En el repositorio: **Settings → Pages → Source → GitHub Actions**.
+
+**Opción B — sin Git (por la web):**
+
+1. Crea un repositorio nuevo en GitHub.
+2. **Add file → Upload files** y arrastra el contenido de esta carpeta (los ~20 archivos visibles; la carpeta oculta `.git` no es necesaria por esta vía).
+3. Pulsa *Commit changes* y luego **Settings → Pages → Source → GitHub Actions**.
+
+En ambos casos, GitHub Actions instala las dependencias y compila el sitio en la nube automáticamente: **no hay que subir dependencias ni archivos compilados**.
+
 ## Características
 
 - 📱 **Responsive** — diseño *mobile-first*; navegación inferior en móvil que se transforma en barra lateral en escritorio (≥1024px).
@@ -46,13 +70,7 @@ npm run build    # compilar a producción (carpeta dist/)
 npm run preview  # previsualizar el build
 ```
 
-## Despliegue en GitHub Pages
-
-El repositorio incluye un flujo de GitHub Actions (`.github/workflows/deploy.yml`) que compila y publica automáticamente en cada *push* a `main`.
-
-1. Sube el repositorio a GitHub.
-2. En **Settings → Pages**, selecciona **Source: GitHub Actions**.
-3. Cada *push* a `main` desplegará la versión actualizada.
+> El flujo de despliegue ya está incluido en `.github/workflows/deploy.yml`: cada *push* a `main` recompila y publica el sitio automáticamente.
 
 ---
 
