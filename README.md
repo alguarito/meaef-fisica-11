@@ -79,3 +79,19 @@ npm run preview  # previsualizar el build
 ---
 
 Material educativo · I.E. Sor María Juliana · Área de Tecnología e Informática.
+
+## Licencia
+
+Código: MIT (`LICENSE`). Contenidos educativos: CC BY-SA 4.0 (`LICENCIA-CONTENIDOS.md`). Los simuladores PhET conservan su licencia CC BY 4.0.
+
+## Cómo citar
+
+Cardenas Orozco, A. (2026). *MEAEF — Física 11.º: Guardianes del Sistema* [Software]. https://github.com/alguarito/meaef-fisica-11
+
+El archivo `CITATION.cff` trae la cita lista para Zotero, Mendeley y GitHub («Cite this repository»).
+
+## Autor
+
+**Alvaro Cardenas Orozco**, PhD en Ciencias de la Educación e ingeniero de sistemas · [alvarocardenasorozco.com](https://alvarocardenasorozco.com) · ORCID [0000-0003-1820-301X](https://orcid.org/0000-0003-1820-301X)
+
+¿Quiere algo así para su institución? Vea el [programa de currículo STEM+](https://alvarocardenasorozco.com/educacion-stem-steam.html) o [agende un diagnóstico gratuito de 30 minutos](https://calendly.com/alvaro-cardenas-orozco/diagnostico-institucional-30-min).

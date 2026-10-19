@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Si usa este trabajo, cítelo así."
+type: software
+title: "MEAEF — Física 11.º: Guardianes del Sistema"
+abstract: "Aplicación web instalable de Física 11.º con simuladores y fichas interactivas que funciona sin conexión."
+authors:
+  - family-names: "Cardenas Orozco"
+    given-names: "Alvaro"
+    orcid: "https://orcid.org/0000-0003-1820-301X"
+license: MIT
+repository-code: "https://github.com/alguarito/meaef-fisica-11"
+url: "https://alguarito.github.io/meaef-fisica-11/"
